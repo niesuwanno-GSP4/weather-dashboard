@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🌤️ Daily Weather</h1>
+  
+  <div class="card">
+    <p>Temperature: <span id="temp"></span></p>
+    <p>Humidity: <span id="humidity"></span></p>
+    <p>Heat Index: <span id="heat"></span></p>
+    <p>Status: <span id="status"></span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
