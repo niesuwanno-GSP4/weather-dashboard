@@ -1,0 +1,26 @@
+name: Update Weather
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-python@v4
+
+    - run: pip install requests
+
+    - run: python update.py
+
+    - run: |
+        git config --global user.name "bot"
+        git config --global user.email "bot@github.com"
+        git add data/weather.json
+        git commit -m "update weather" || echo "no change"
+        git push
